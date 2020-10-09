@@ -27,12 +27,15 @@ pre {
   word-wrap: break-word;
   margin: 10px auto;
 }
+table {
+  width: 100%;
+}
 table td {
   border: 1px solid #e5e5e5;
-  padding: 20px;
+  padding: 10px;
   background: #fff;
   color: #555;
-  line-height: 32px;
+  line-height: 1.4;
 }
 ::-webkit-scrollbar-track-piece {
   //滚动条凹槽的颜色，还可以设置边框属性
