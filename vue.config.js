@@ -12,11 +12,11 @@ module.exports = {
   devServer: {
     proxy: {
       '/api': {
-        target: 'http://lian.xkmov.net/', //对应自己的接口
+        target: 'http://lian.xkmov.net', //对应自己的接口
         changeOrigin: true,
         ws: true,
         pathRewrite: {
-          '^/api': '/api',
+          '^/api': '',
         },
       },
     },

@@ -82,5 +82,6 @@ export default {
   font-size: 16px;
   line-height: 1.6;
   word-wrap: break-word;
+  margin-bottom: 0.2em;
 }
 </style>
