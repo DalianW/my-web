@@ -22,7 +22,7 @@
         @goPage="goPage"
       ></SlideMenu>
     </a-layout-sider>
-    <a-layout>
+    <a-layout style="position: relative;">
       <a-layout-header
         style="background: #fff; padding: 0;display: flex;flex-align:center;"
       >
@@ -40,6 +40,7 @@
       </a-layout-header>
       <a-layout-content
         style="padding: 20px 20px 0; box-size:border-box; height:(100vh - 193px); overflow-y: auto;"
+        ref="contentBox"
       >
         <div
           :style="{

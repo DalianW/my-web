@@ -154,4 +154,14 @@ table td {
 .justify-around {
   justify-content: space-around;
 }
+
+.relative{
+  position: relative;
+}
+.absolute{
+  position: absolute;
+}
+.fixed{
+  position: fixed;
+}
 </style>

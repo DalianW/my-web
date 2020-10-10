@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="list-page" :class="{ 'padding-bot': list.length >= pageSize }">
     <div class="loading-box" v-if="list.length <= 0 && loading">
       <div class="item" v-for="item in 3" :key="item">
         <a-skeleton :loading="loading" active></a-skeleton>
@@ -32,14 +32,15 @@
     <div v-else-if="list.length <= 0 && !loading" class="empty-box">
       <a-empty description="暂无数据" />
     </div>
-
-    <div class="page-box" v-if="list.length > 0">
-      <a-pagination
-        show-quick-jumper
-        :default-current="page"
-        :total="total"
-        @change="onChange"
-      />
+    <div class="page-box absolute" v-if="list.length >= pageSize">
+      <div class="page-container">
+        <a-pagination
+          show-quick-jumper
+          :default-current="page"
+          :total="total"
+          @change="onChange"
+        />
+      </div>
     </div>
   </div>
 </template>
@@ -131,7 +132,6 @@ export default {
 }
 .page-box {
   text-align: center;
-  padding: 10px 0 20px;
 }
 .item {
   border-bottom: 1px solid #e9e9e9;
@@ -186,6 +186,19 @@ export default {
         padding-top: 4px;
       }
     }
+  }
+}
+.padding-bot {
+  padding-bottom: 20px;
+}
+.page-box {
+  width: 100%;
+  bottom: 69px;
+  padding: 0 24px;
+  left: 0;
+  .page-container {
+    padding: 10px 0 20px;
+    background: #fff;
   }
 }
 </style>
